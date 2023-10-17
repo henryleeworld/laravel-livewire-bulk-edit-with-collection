@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
@@ -27,7 +28,7 @@ class BulkTable extends Component
         $this->reloadData();
     }
 
-    public function render()
+    public function render(): View
     {
         $this->selectedCategory = $this->products
             ->filter(fn($product) => $this->getSelectedProducts()->contains($product->id))
@@ -36,7 +37,6 @@ class BulkTable extends Component
             ->pipe(fn($categories) => $categories->count() === 1 ? $categories->first() : null);
 
         $this->bulkDisabled = $this->selectedProducts->filter(fn($p) => $p)->count() < 2;
-
         return view('livewire.bulk-table');
     }
 

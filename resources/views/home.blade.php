@@ -13,7 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     @livewire('bulk-table')
                 </div>
             </div>
