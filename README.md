@@ -1,4 +1,4 @@
-# Laravel 10 Livewire 透過集合大量編輯
+# Laravel 11 Livewire 透過集合大量編輯
 
 Livewire 透過集合一次進行多項編輯，可同時更新多個項目，是省時的好幫手。Eloquent 回傳的所有多結果集都會是 `Illuminate\Database\Eloquent\Collection` 物件的實例，包括透過 `get` 方法取得或透過關聯存取的結果。Eloquent 集合物件繼承 Laravel 基礎集合，所以它也自然的繼承了幾十種用於與底層 Eloquent 模型陣列的優雅方法。
 
@@ -34,5 +34,5 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/8ccuBWt.gif)
+![](https://i.imgur.com/y3nyidG.gif)
 > 選擇超過兩個商品以上即可進行大量編輯

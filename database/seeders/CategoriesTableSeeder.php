@@ -8,12 +8,10 @@ use Illuminate\Database\Seeder;
 class CategoriesTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Run the database seeders.
      */
-    public function run()
+    public function run(): void
     {
-        Category::factory()->times(10)->create();
+        Category::factory()->count(10)->create();
     }
 }

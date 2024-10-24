@@ -1,10 +1,10 @@
 <div>
-    <button data-bs-toggle="modal" data-bs-target="#categories-modal" class="btn btn-success" {{ $bulkDisabled ? 'disabled' : null }}>{{ trans('frontend.product.button.bulk_edit') }}</button>
+    <button data-bs-toggle="modal" data-bs-target="#categories-modal" class="btn btn-success" {{ $bulkDisabled ? 'disabled' : null }}>{{ __('Bulk Edit') }}</button>
     <table class="table table-stripped mt-3">
         <tr>
             <th></th>
-            <th>{{ trans('frontend.product.content.name') }}</th>
-            <th>{{ trans('frontend.product.content.category') }}</th>
+            <th>{{ __('Name') }}</th>
+            <th>{{ __('Category') }}</th>
         </tr>
         @foreach($products as $product)
             <tr>
@@ -20,19 +20,19 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fs-5" id="categories-modal-label">{{ trans('frontend.category.title') }}</h5>
+                    <h5 class="modal-title fs-5" id="categories-modal-label">{{ __('Categories') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <select wire:model="selectedCategory" class="form-control">
-                        <option value="null">{{ trans('frontend.category.content.please_select') }}</option>
+                        <option value="null">{{ __('Please select') }}</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" wire:click="changeCategory">{{ trans('frontend.category.content.save_changes') }}</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" wire:click="changeCategory">{{ __('Save changes') }}</button>
                 </div>
             </div>
         </div>

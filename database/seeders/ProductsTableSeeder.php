@@ -9,12 +9,10 @@ use Illuminate\Database\Seeder;
 class ProductsTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Run the database seeders.
      */
-    public function run()
+    public function run(): void
     {
-        Product::factory()->times(100)->create();
+        Product::factory()->count(100)->create();
     }
 }
